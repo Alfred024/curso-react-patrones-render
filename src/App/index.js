@@ -4,8 +4,6 @@ import { TodoHeader } from '../TodoHeader';
 import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
 
-import { TodoProvider } from '../TodoContext';
-import { TodoContext } from '../TodoContext';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { TodosError } from '../TodosError';

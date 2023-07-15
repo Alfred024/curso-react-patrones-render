@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext';
+import { TodoContext } from '../utils/useTodos';
 import './TodoCounter.css';
 
 function TodoCounter() {
