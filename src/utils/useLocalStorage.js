@@ -36,9 +36,18 @@ function useLocalStorage(itemName, initialValue) {
     }
   };
 
+  //Es la función que no snotifica si en verdad hay un cambio en los TODO´s
+  //Esto pasa cuando un todo se agrega, elimina,
+  //También presionando un botón check, aunque eso lo vamos a ignorar por ahora
+  const storageChanged = () =>{
+    const newInfo = JSON.parse(localStorage.getItem(itemName));
+    setItem(newInfo);
+  }
+
   return {
     item,
     saveItem,
+    storageChanged,
     loading,
     error,
   };

@@ -17,6 +17,9 @@ import { TodoForm } from '../TodoForm';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
 
+//Component receiving HOC 
+import { ChangeStorageNotification } from '../ChangeAlert';
+
 //Custom hooks
 import { useTodos } from '../utils/useTodos';
 
@@ -25,6 +28,7 @@ function App() {
   const {
     error,
     loading,
+    storageChanged,
     totalTodos,
     completedTodos,
     searchValue,
@@ -66,6 +70,10 @@ function App() {
       <Modal>
         <TodoForm/>
       </Modal>
+
+      <ChangeStorageNotification
+        storageChanged = {storageChanged}
+      />
     </>
   );
 }

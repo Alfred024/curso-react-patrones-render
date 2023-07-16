@@ -5,6 +5,7 @@ function useTodos() {
   const {
     item: todos,
     saveItem: saveTodos,
+    storageChanged,
     loading,
     error,
   } = useLocalStorage('TODOS_V1', []);
@@ -53,6 +54,7 @@ function useTodos() {
   return {
       loading,
       error,
+      storageChanged,
       totalTodos,
       completedTodos,
       searchValue,
