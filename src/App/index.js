@@ -23,8 +23,8 @@ import { useTodos } from '../utils/useTodos';
 
 function App() {
   const {
-    loading,
     error,
+    loading,
     totalTodos,
     completedTodos,
     searchValue,
@@ -45,9 +45,20 @@ function App() {
       </TodoHeader>
 
       <TodoList
-
+        error = {error}
+        loading = {loading}
+        numTodos = {searchedTodos.length}
+        errorRender = {() =>{<TodosError/>}}
+        loadingRender = {() =>{<TodosLoading/>}}
+        emptyListRender = {() =>{<EmptyTodos/>}}
       >
-        {/* TODO ITEMS WOULD BE RENDER HERE */}
+        {searchedTodos.map(itemTodo =>{
+          <TodoItem
+            key = {itemTodo.text}
+            text = {itemTodo.text}
+            completed = {itemTodo.completed}
+          />
+        })}
       </TodoList>
 
       <CreateTodoButton/>

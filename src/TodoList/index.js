@@ -3,11 +3,17 @@ import './TodoList.css'
 
 function TodoList(props) {
   return (
-    <section>
-      <ul>
-        {props.children}
-      </ul>
-    </section>
+    <>
+      {props.error && props.errorRender()}
+      {props.loading && props.loadingRender()}
+      {(props.numTodos === 0 ) && props.emptyListRender()}
+
+      <section>
+        <ul>
+          {props.children}
+        </ul>
+      </section>
+    </>
   );
 }
 
